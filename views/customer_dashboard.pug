@@ -4,7 +4,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Customer Dashboard
   link(rel='stylesheet' href="{{ url_for('public', filename='styles.css') }}")
-  script(src="{{ url_for('public', filename='js/click_event.js') }}")
+  script(src="./public/js/click_event.js")
   script(src='https://code.jquery.com/jquery-3.6.0.min.js')
 .dashboard-container
   .welcome-message
@@ -36,6 +36,6 @@ head
       |             {% endif %}
     .option
       h2 Create a New Service Request
-      button(onclick="location.href='/create-service-request'") Create Request
+      button(onclick="location.href='./views/create_service_request'") Create Request
   div
     button(onclick='logout()' style='margin-top: 50px;') Logout
