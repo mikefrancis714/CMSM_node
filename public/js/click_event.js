@@ -1,4 +1,4 @@
-// static/js/click_event.js
+// public/js/click_event.js
 
 //logout function
 function logout() {
