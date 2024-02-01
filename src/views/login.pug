@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title CMSM Login
-  link(rel='stylesheet' href="/stylesheets/style.css")
+  link(rel='stylesheet' href="/style.css")
   // Add any additional styles or fonts here
 .login-container
   .welcome-banner
@@ -11,11 +11,7 @@ head
     p Your trusted partner in computer maintenance services.
   .login-section
     h2 Login
-<<<<<<< HEAD:src/views/login.pug
     form(action="/login.pug" method='post')
-=======
-    form(action="./views/login" method='post')
->>>>>>> ea20de8521852d321f4f7f7efadd78cd259ee241:views/login.pug
       label(for='user-type') User Type:
       select#user-type(name='user_type')
         option(value='customer') Customer
@@ -27,8 +23,4 @@ head
       button(type='submit') Login
     p.signup-link
       | Not registered? 
-<<<<<<< HEAD:src/views/login.pug
-      a(href="customer_signup.pug") Sign Up
-=======
-      a(href="./views/customer_signup.pug") Sign Up
->>>>>>> ea20de8521852d321f4f7f7efadd78cd259ee241:views/login.pug
+      a(href="/customer_signup") Sign Up
