@@ -11,7 +11,7 @@ head
     p Your trusted partner in computer maintenance services.
   .login-section
     h2 Login
-    form(action="{{ url_for('login') }}" method='post')
+    form(action="./views/login" method='post')
       label(for='user-type') User Type:
       select#user-type(name='user_type')
         option(value='customer') Customer
@@ -23,4 +23,4 @@ head
       button(type='submit') Login
     p.signup-link
       | Not registered? 
-      a(href="{{ url_for('customer_signup')}}") Sign Up
+      a(href="./views/customer_signup.pug") Sign Up
