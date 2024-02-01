@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('public', filename='styles.css') }}">
+    <script src="{{ url_for('public', filename='js/click_event.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="welcome-message">
+            <h1>Welcome!</h1>
+            <p>We're delighted to have you as a valued customer at CMSM. Our team is here to assist you with top-notch computer maintenance services.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cupiditate adipisci mollitia commodi explicabo quam minima ullam cum tempora quaerat ea dignissimos veritatis, eius repellat, fugit ut vero, eligendi quidem.</p>
+            <p>How can we help you today?</p>
+        </div>
+        <div class="dashboard-options">
+            <div class="option">
+                <h3>Your Service Requests</h3>
+                {% if service_requests %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                                </tr>
+                    </thead>
+                    <tbody>
+                        {% for request in service_requests %}
+                            <tr>
+                                <td>{{ request.requestid }}</td>
+                                <td>{{ request.description }}</td>
+                                <td>{{ request.status }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+             <p>No service requests found for this customer.</p>
+            {% endif %}
+            </div>
+            <div class="option">
+                <h2>Create a New Service Request</h2>
+                <button onclick="location.href='/create-service-request'">Create Request</button>
+            </div>
+        </div>
+        <div>
+            <button onclick="logout()" style="margin-top: 50px;">Logout</button>
+        </div>
+    </div>
+</body>
+</html>
