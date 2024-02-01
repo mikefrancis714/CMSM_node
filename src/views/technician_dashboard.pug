@@ -1,0 +1,32 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Technician Dashboard
+  link(rel='stylesheet' href="/stylesheets/style.css")
+  script(src="/js/click_event.js")
+.dashboard-container
+  button(onclick='logout()') Logout
+  .progress-summary
+    h1 Technician Dashboard
+    p New Works: {{ new_works_count }}
+    p In Progress: {{ in_progress_count }}
+    p Completed: {{ completed_count }}
+    p Works Left: {{ works_left_count }}
+  .service-requests
+    h2 Assigned Service Requests
+    table
+      thead
+        tr
+          th Description
+          th Customer
+          th Action
+      tbody
+        // Sample row, replace with dynamic content from your backend
+        tr
+          td {{ request.description }}
+          td {{ request.customer_name }}
+          td
+            button(onclick='assignAnother()') Assign Another
+            button(onclick='markInProgress()') In Progress
+            button(onclick='markFinished()') Finished

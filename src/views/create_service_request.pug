@@ -1,0 +1,16 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Create Service Request
+  link(rel='stylesheet' href="/stylesheets/style.css")
+.request-form-container
+  h1 Create Service Request
+  form(action="/create_service_request.pug" method='post')
+    label(for='customer-name') Your Name:
+    input#customer(type='text' name='customer' required='')
+    label(for='description') Service Description:
+    textarea#description(name='description' rows='4' required='')
+    label(for='request-date') Request Date:
+    input#requestdate(type='text' name='requestdate')
+    button(type='submit') Submit Request

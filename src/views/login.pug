@@ -1,0 +1,26 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title CMSM Login
+  link(rel='stylesheet' href="/stylesheets/style.css")
+  // Add any additional styles or fonts here
+.login-container
+  .welcome-banner
+    h1 Welcome to CMSM
+    p Your trusted partner in computer maintenance services.
+  .login-section
+    h2 Login
+    form(action="/login.pug" method='post')
+      label(for='user-type') User Type:
+      select#user-type(name='user_type')
+        option(value='customer') Customer
+        option(value='technician') Technician
+      label(for='email') Username:
+      input#email(type='email' name='email' required='')
+      label(for='password') Password:
+      input#password(type='password' name='password' required='')
+      button(type='submit') Login
+    p.signup-link
+      | Not registered? 
+      a(href="customer_signup.pug") Sign Up
