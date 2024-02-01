@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title CMSM Customer Signup
+  link(rel='stylesheet' href="{{ url_for('public', filename='styles.css') }}")
+  // Add any additional styles or fonts here
+.signup-container
+  h2 Customer Signup
+  form(action="{{ url_for('customer_signup')}}" method='post')
+    label(for='first-name') First Name:
+    input#first-name(type='text' name='firstname' required='')
+    label(for='last-name') Last Name:
+    input#last-name(type='text' name='lastname' required='')
+    label(for='email') Email:
+    input#email(type='email' name='email' required='')
+    label(for='phone') Phone:
+    input#phone(type='tel' name='phones' required='')
+    label(for='address') Address:
+    textarea#address(name='address' rows='4' required='')
+    label(for='password') Password:
+    input#password(type='password' name='password' required='')
+    button(type='submit') Sign Up
