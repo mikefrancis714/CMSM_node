@@ -3,11 +3,11 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title CMSM Customer Signup
-  link(rel='stylesheet' href="{{ url_for('public', filename='styles.css') }}")
+  link(rel='stylesheet' href="./public/styles.css")
   // Add any additional styles or fonts here
 .signup-container
   h2 Customer Signup
-  form(action="{{ url_for('customer_signup')}}" method='post')
+  form(action="./views/customer_signup.pug" method='post')
     label(for='first-name') First Name:
     input#first-name(type='text' name='firstname' required='')
     label(for='last-name') Last Name:
