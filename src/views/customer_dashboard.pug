@@ -3,13 +3,8 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Customer Dashboard
-<<<<<<< HEAD:src/views/customer_dashboard.pug
-  link(rel='stylesheet' href="/stylesheets/style.css")
-  script(src="/js/click_event.js")
-=======
   link(rel='stylesheet' href="{{ url_for('public', filename='styles.css') }}")
   script(src="./public/js/click_event.js")
->>>>>>> ea20de8521852d321f4f7f7efadd78cd259ee241:views/customer_dashboard.pug
   script(src='https://code.jquery.com/jquery-3.6.0.min.js')
 .dashboard-container
   .welcome-message
@@ -41,10 +36,6 @@ head
       |             {% endif %}
     .option
       h2 Create a New Service Request
-<<<<<<< HEAD:src/views/customer_dashboard.pug
-      button(onclick="location.href='/create_service_request.pug'") Create Request
-=======
       button(onclick="location.href='./views/create_service_request'") Create Request
->>>>>>> ea20de8521852d321f4f7f7efadd78cd259ee241:views/customer_dashboard.pug
   div
     button(onclick='logout()' style='margin-top: 50px;') Logout
