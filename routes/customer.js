@@ -61,7 +61,7 @@ router.route('/signup')
   });
 
 // Customer dashboard route
-router.get('/dashboard', (req, res) => {
+router.get('/customer-dashboard', (req, res) => {
   if (req.isAuthenticated()) {
     const customerid = req.user.customerid;
 
@@ -81,8 +81,36 @@ router.get('/dashboard', (req, res) => {
   } else {
     // User is not authenticated
     req.flash('error', 'Unauthorized');
-    res.redirect('/customer/login');
+    res.redirect('/login');
   }
 });
+
+
+// Create service request route
+router.post('/create-service-request', async (req, res) => {
+  const { description, requestdate } = req.body;
+
+  try {
+     // Check if the user is authenticated
+     if (req.isAuthenticated()) {
+      // Use req.user.customerid to get the current customer ID
+      const currentCustomerId = req.user.customerid;
+
+    const newServiceRequest = await ServiceRequest.create({
+      CustomerId: req.user.customerid, // Assuming your ServiceRequest model has a CustomerId field
+      Description: description,
+      RequestDate: requestdate,
+      // Other fields as needed
+    });
+
+    // Example: res.redirect('/customer-dashboard');
+    res.status(200).json({ message: 'Service request submitted successfully!' });
+      }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 
 module.exports = router;
