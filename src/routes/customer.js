@@ -19,7 +19,7 @@ router.route('/')
 // Customer signup route
 router.route('/signup')
   .get((req, res) => {
-    res.render('customer_signup.html'); // Render the customer signup form
+    res.render('customer_signup'); // Render the customer signup form
   })
   .post((req, res) => {
     const { firstname, lastname, email, phones, address, password } = req.body;
@@ -71,7 +71,7 @@ router.get('/dashboard', (req, res) => {
       }
     })
       .then(customerServiceRequests => {
-        res.render('customer_dashboard.html', { service_requests: customerServiceRequests });
+        res.render('customer_dashboard.pug', { service_requests: customerServiceRequests });
       })
       .catch(error => {
         console.error(error);
