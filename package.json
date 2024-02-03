@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/app.js"
+    "start": "node ./server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -13,7 +13,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.18.0",
     "http-errors": "~1.6.3",
-    "jade": "^1.9.2",
+    "jade": "^0.29.0",
     "morgan": "~1.9.1",
     "mysql2": "^3.9.1",
     "passport": "^0.7.0",
